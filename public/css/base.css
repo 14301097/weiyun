@@ -1,0 +1,9 @@
+/*浮动-清浮动*/
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:before,.clearfix:after { content:""; display:block;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+/*定位*/
+.pr{position: relative;}
+.pa{position: absolute;}

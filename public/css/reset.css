@@ -1,0 +1,8 @@
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,input,select,textarea,form{margin: 0; padding: 0;font-family: ff-tisa-web-pro-1,ff-tisa-web-pro-2,"Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3";}
+img{border:none;display: block;vertical-align:top;}
+ul,ol{list-style:none;}
+input,select,textarea{/*outline:none;*/border:none;background-color: transparent;}
+textarea{resize:none;}
+a{text-decoration:none;}
+em,i{font-style: normal;}
+i{overflow: hidden; display: inline-block;}

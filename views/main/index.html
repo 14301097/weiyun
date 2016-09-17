@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微云，全能收藏 无处不在</title>
+		<link rel="stylesheet" type="text/css" href="public/css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/index.css"/>
+		<script type="text/javascript" src="public/js/mTween2.js" ></script>
+		<script type="text/javascript" src="public/js/index.js" ></script>
+	</head>
+	<body>
+		<section class="wrap">
+		<script type="text/javascript">
+			var wrap = $(".wrap");
+			wrap.style.width = window.innerWidth + 'px';
+			console.log(window.innerWidth)
+		</script>
+			<!--页面头部-->
+			<section class="login_header">
+				<div class="login_header_in clearfix">
+					<h1 class="fl">
+						<a href="javascript:;">
+							<i class="icon_bg logo"></i>
+						</a>
+					</h1>
+					<ul class="fr clearfix">
+						<li class="active">
+							<a href="javascript:;" id="toindex">首页</a>
+						</li>
+						<li>
+							<a href="javascript:;" id="todownload">下载</a>
+						</li>
+						<li>
+							<a href="javascript:;" id="tofunintro">功能介绍</a>
+						</li>
+						<li>
+							<a href="javascript:;" id="tovip">微云会员</a>
+						</li>
+					</ul>
+					
+				</div>
+			</section>
+			<!--页面主体-->
+			<section class="content">
+				<!--banner部分&登陆框-->
+				<section class="_banner pr">
+					<div class="_banner_in">
+						<div class="bannerbox" id="bannerbox">
+							<ul class="banner clearfix" id="banner">
+								<li class="banner_item">
+									<img src="public/img/login/banner_1.png"/>
+								</li>
+								<li class="banner_item">
+									<img src="public/img/login/banner_2.png"/>
+								</li>
+								<li class="banner_item">
+									<img src="public/img/login/banner_3.png"/>
+								</li>
+								<li class="banner_item">
+									<img src="public/img/login/banner_1.png"/>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">
+						var bannerBox = $("#bannerbox")
+						var bannerList = $("#banner");
+						var bannerItems = $(".banner_item",bannerList);
+					
+						var moveBanner1 = new AutoImg(bannerBox, bannerList, bannerItems, 2500, 1000, 'easeBoth');
+					</script>
+					
+					<div class="login_box pa">
+						<header class="login_box_head">
+							<div class="tab tab_qq" id="tab_qq">
+								QQ账号登录
+							</div>
+							<div class="tab tab_register" id="tab_register">
+								注册新账号
+							</div>
+						</header>
+						<div class="login_box_content">
+							<div class="login_box_main" id="login_box_qq">
+								<div class="text">
+									<p>账号密码登录</p>
+									<div class="info">
+										推荐使用<a href="javascript:;">快速安全登录</a>，防止盗号。
+									</div>
+								</div>
+								<form action="/api/user/login" class="inputbox" id="loginform">
+									<input type="text" name="username" class="username" placeholder="默认账号siky"/>
+									<input type="password" name="password" class="password" placeholder="默认密码123"/>
+									<input type="button" class="login_btn" id="login_btn" value="登陆" />
+									<span class="message"></span>
+								</form>
+								<div class="login_box_bottom_btns clearfix">
+									<div class="fr">
+										<a href="javascript:;">忘了密码？</a>
+										<span class="short_line">丨</span>
+										<a href="javascript:;">意见反馈</a>
+									</div>
+								</div>
+							</div>
+							<div class="login_box_main" id="register_box">
+								<form action="/api/user/register" id="registerform" class="inputbox">
+									<input type="text" name="username" class="username" placeholder="请输入用户名"/>
+									<span class="message-username"></span>
+									<input type="password" name="password" class="password" placeholder="请输入密码"/>
+									<input type="password" name="repassword" class="repassword" placeholder="请重复密码"/>
+									<input type="button" class="login_btn" id="register_btn" value="注册" />
+									<span class="message"></span>
+								</form>
+							</div>
+						</div>
+						<script type="text/javascript">
+							//新建tab切换
+							var tabs = $('.tab');
+							var divs = $('.login_box_main');
+							var tab1 = new ChangeTab(tabs, divs);
+
+							//注册与登陆
+							var regtisterBox = $('#register_box');
+							var registerForm = $('#registerform');
+							var registerUserName = $('.username', regtisterBox);
+							var registerMessageUsername = $('.message-username', regtisterBox);
+							var registerPassword = $('.password', regtisterBox);
+							var registerRePassword = $('.repassword', regtisterBox);
+							var registerBtn = $('#register_btn');
+							var loginBox = $('#login_box_qq');
+							var loginForm = $('#loginform');
+							var loginUserName = $('.username', loginBox);
+							var loginPassword = $('.password', loginBox);
+							var loginBtn = $('#login_btn');
+
+							//验证用户名是否可用
+							registerUserName.onblur = function() {
+								//创建ajax对象
+								var xhr = new XMLHttpRequest();
+
+								//配置请求信息
+								xhr.open('get', '/api/user/checkUserName?username=' + encodeURI(this.value) + '&' + Date.now(), true);
+
+								//事件回调
+								xhr.onload = function() {
+									var result = JSON.parse(this.responseText);
+									console.log(result.message)
+									registerMessageUsername.innerHTML = result.message;
+									if (result.code) {
+										registerMessageUsername.style.color = 'red';
+									} else {
+										registerMessageUsername.style.color = 'green';
+									}
+								}
+
+								//设置头信息 （设置编码信息， 申明编码格式）
+								xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+								//发送请求 数据作为参数发送
+								xhr.send();
+							}
+
+							//点击注册按钮注册
+							registerBtn.onclick = function() {
+								registerFun();
+								return false;
+							}
+							//点击回车注册
+							registerRePassword.onkeydown = function(e) {
+								e.keyCode == 13 && registerFun();
+							}
+
+							//点击按钮登陆
+							loginBtn.onclick = function() {
+								loginFun();
+								return false;
+							}
+							//点击回车登陆
+							loginPassword.onkeydown = function(e) {
+								e.keyCode == 13 && loginFun();
+							}
+							//注册的函数
+							function registerFun() {
+								//创建ajax对象
+								var xhr = new XMLHttpRequest();
+
+								//配置请求信息
+								xhr.open('post', registerForm.getAttribute('action'), true);
+
+								//事件回调
+								xhr.onload = function(e) {
+									var result = JSON.parse(this.responseText);
+									if (result.code) {
+										registerBtn.style.color = 'red';
+										registerBtn.value = result.message;
+									} else {
+										loginBtn.style.color = 'white';
+										registerBtn.value = result.message + '...';
+										setTimeout(function() {
+											window.location.reload();
+										}, 1000);
+									}
+
+								}
+
+								//设置头信息 （设置编码信息， 申明编码格式）
+								xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+								//发送请求 数据作为参数发送
+								xhr.send('username=' + registerUserName.value + '&' 										+'password=' + registerPassword.value + '&'
+										+'repassword=' + registerRePassword.value);
+
+							}
+							//登陆的函数
+							function loginFun() {
+								//创建ajax对象
+								var xhr = new XMLHttpRequest();
+
+								//配置请求信息
+								xhr.open('post', loginForm.getAttribute('action'), true);
+
+								//事件回调
+								xhr.onload = function(e) {
+									var result = JSON.parse(this.responseText);
+									if (result.code) {
+										loginBtn.style.color = 'red';
+										loginBtn.value = result.message;
+									} else {
+										loginBtn.style.color = 'white';
+										loginBtn.value = result.message + '...';
+										setTimeout(function() {
+											window.location.reload();
+										}, 1000);
+									}
+
+								}
+
+								//设置头信息 （设置编码信息， 申明编码格式）
+								xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+								//发送请求 数据作为参数发送
+								xhr.send('username=' + loginUserName.value + '&' 										+'password=' + loginPassword.value);
+
+							}
+
+						</script>
+					</div>
+				</section>
+				<!--下载-->
+				<section class="download" id="download">
+					<ul class="download_list clearfix">
+						<li class="download_item download_android" id="download_android">
+							<div class="download_icon icon_bg"></div>
+							<p>Android版</p>
+						</li>
+						<li class="download_item download_iphone" id="download_iphone">
+							<div class="download_icon icon_bg"></div>
+							<p>iphone版</p>
+						</li>
+						<li class="download_item download_ipad" id="download_ipad">
+							<div class="download_icon icon_bg"></div>
+							<p>ipad版</p>
+						</li>
+						<li class="download_item download_windows" id="download_windows">
+							<div class="download_icon icon_bg"></div>
+							<p>Windows版</p>
+						</li>
+						<li class="download_item download_mac" id="download_mac">
+							<div class="download_icon icon_bg"></div>
+							<p>Mac版</p>
+						</li>
+					</ul>
+				</section>
+				<!--功能介绍-->
+				<section class="fun_introduce" id="fun_introduce">
+					<div class="fun_intro_item fun_intro_bluebg">
+						<div class="fun_intro_item_l clearfix" id="fun_intro_a">
+							<div class="text_img fl" id="text_img_a">
+								<h3>相册备份</h3>
+								<div class="text_bg_a icon_bg"></div>
+							</div>
+							<div class="pic_img fr">
+								<img src="public/img/login/album-backup.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="fun_intro_item">
+						<div class="fun_intro_item_r clearfix" id="fun_intro_b">
+							<div class="text_img fr" id="text_img_b">
+								<h3>通讯录备份</h3>
+								<div class="text_bg_b icon_bg"></div>
+							</div>
+							<div class="pic_img fl">
+								<img src="public/img/login/contact-backup.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="fun_intro_item fun_intro_bluebg">
+						<div class="fun_intro_item_l clearfix" id="fun_intro_c">
+							<div class="text_img fl" id="text_img_c">
+								<h3>文件管理</h3>
+								<div class="text_bg_c icon_bg"></div>
+							</div>
+							<div class="pic_img fr">
+								<img src="public/img/login/file-manage.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="fun_intro_item">
+						<div class="fun_intro_item_r clearfix" id="fun_intro_d">
+							<div class="text_img fr" id="text_img_d">
+								<h3>云笔记</h3>
+								<div class="text_bg_d icon_bg"></div>
+							</div>
+							<div class="pic_img fl">
+								<img src="public/img/login/cloudynotes.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="fun_intro_item fun_intro_bluebg">
+						<div class="fun_intro_item_l clearfix" id="fun_intro_e">
+							<div class="text_img fl" id="text_img_e">
+								<h3>剪贴板 回收站 收藏夹</h3>
+								<div class="text_bg_e icon_bg"></div>
+							</div>
+							<div class="pic_img fr">
+								<img src="public/img/login/trash.png"/>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!--微云会员-->
+				<section class="feature_intro" id="feature_intro">
+					<ul class="feature_intro_list">
+						<li class="feature_intro_item fl">
+							<div class="featrue_icon featrue_a icon_bg"></div>
+							<p class="title">单文件更大</p>
+							<p class="txt">单个文件最大20G</p>
+						</li>
+						<li class="feature_intro_item fl">
+							<div class="featrue_icon featrue_b icon_bg"></div>
+							<p class="title">单日流量更爽</p>
+							<p class="txt">单日最大20G</p>
+						</li>
+						<li class="feature_intro_item fl">
+							<div class="featrue_icon featrue_c icon_bg"></div>
+							<p class="title">空间更大</p>
+							<p class="txt">额外赠送2T空间</p>
+						</li>
+						<li class="feature_intro_item fl">
+							<div class="featrue_icon featrue_d icon_bg"></div>
+							<p class="title">分享更久</p>
+							<p class="txt">外链30天有效</p>
+						</li>
+						<li class="feature_intro_item fl">
+							<div class="featrue_icon featrue_e icon_bg"></div>
+							<p class="title">标签更全</p>
+							<p class="txt">识别全部图片 按标签分类</p>
+						</li>
+					</ul>
+					<div class="open_vip">
+						<a href="javascript:;" class="open_vip_btn">马上开通会员</a>
+					</div>
+					<div class="mark_wy">
+						<span class="mark_wy_txt">关注微云官方认证空间</span>
+						<a href="javascirpt:;" class="mark_wy_btn fr">
+							<i class="mark_wy_icon icon_bg fl"></i>
+							<span class="fl">关注</span>
+						</a>
+					</div>
+				</section>
+			</section>
+			<!--页脚-->
+			<footer class="foot">
+			    <div class="foot_cont">
+			        <div class="friend_href clearfix">
+			            <div class="friend_sec fl">
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_qzone"></i>QQ空间</a>
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_music"></i>QQ音乐</a>
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_mv"></i>企鹅MV</a>
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_fm"></i>企鹅FM</a>
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_course"></i>腾讯课堂</a>
+			            </div>
+			            <div class="friend_sec fl">
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_qcloud"></i>腾讯云</a>
+			                <a class="friend_link" href="javascript:;"><i class="icon_bg icon_qidian"></i>腾讯企点</a>
+			            </div>
+			        </div>
+			        <div class="copyright">
+			            <p><a href="javascript:;">关于腾讯</a> | <a href="javascript:;">服务条款</a> | <a href="javascript:;">客服中心</a> | 粤B2-20090059-86号</p>
+			            <p>版权声明：您应尊重相关作品著作权人合法权益，未经著作权人合法授权，不能违法上传、存储、分享他人作品</p>
+			            <p><a href="javascript:;">侵权投诉指引</a> |  举报或投诉：<a class="email" href="javascript:;">notice-b2@tencent.com</a></p>
+			            <p>Copyright © 1998 - <span id="this_year">2016</span> Tencent. All Rights Reserved. 腾讯公司 版权所有</p>
+			            <p>Siky 仿制于 2016.8</p>
+			        </div>
+			    </div>
+			</footer>
+			<!--aside_nav-->
+			<ul class="aside_nav" id="aside_nav">
+				<li class="clearfix pr" id="aside_index">
+					<i class="icon_bg"></i>
+					<span class="fl">首页</span>
+				</li>
+				<li class="clearfix pr" id="aside_download">
+					<i class="icon_bg"></i>
+					<span class="fl">下载</span>
+				</li>
+				<li class="clearfix pr" id="aside_fun_intro">
+					<i class="icon_bg"></i>
+					<span class="fl">功能介绍</span>
+				</li>
+				<li class="clearfix pr" id="aside_vip">
+					<i class="icon_bg"></i>
+					<span class="fl">会员特权</span>
+				</li>
+			</ul>
+		</section>
+		<script type="text/javascript">
+		/*
+		 * 点击按钮页面滚动到相应元素位置
+		 */
+			//顶部按钮获取
+			var toIndex = $('#toindex');
+			var toDownload = $('#todownload');
+			var toFunintro = $('#tofunintro');
+			var toVip = $('#tovip');
+			//aside按钮获取
+			var asideIndex = $('#aside_index');
+			var asideIownload = $('#aside_download');
+			var asideFun_intro = $('#aside_fun_intro');
+			var asideVip = $('#aside_vip');
+			//页面节点获取
+			var downLoad = $('#download');
+			var funIntroduce = $('#fun_introduce');
+			var featureIntro = $('#feature_intro');
+			//新建对象，实现点击按钮滚动到相应节点
+			var toindex1 = new AutoScroll(toindex, document.body , 500, 'easeBoth');
+			var toindex2 = new AutoScroll(asideIndex, document.body , 500, 'easeBoth');
+			var toDownload1 = new AutoScroll(toDownload, downLoad , 500, 'easeBoth');
+			var toDownload2 = new AutoScroll(asideIownload, downLoad , 500, 'easeBoth');
+			var tofunintro1 = new AutoScroll(tofunintro, fun_introduce , 500, 'easeBoth');
+			var tofunintro2 = new AutoScroll(asideFun_intro, fun_introduce , 500, 'easeBoth');
+			var tovip1 = new AutoScroll(tovip, feature_intro , 500, 'easeBoth');
+			var tovip2 = new AutoScroll(asideVip, feature_intro , 500, 'easeBoth');
+			
+			//aside按钮的动态
+				//随滚动条位置判断是否要hover
+			var sc1 = new ScrollCarton();
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

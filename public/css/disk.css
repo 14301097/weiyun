@@ -1,0 +1,840 @@
+body{
+	font-family: Microsoft YaHei,Tahoma,SimSun,Verdana;
+}
+
+/*sprite*/
+.checkall-btn{
+	background-image: url(../img/index/ico.png);
+	background-repeat: no-repeat;
+	background-position: 0 -270px;
+}
+.checkall-btn.checked{
+	background-position: 0 -320px;
+}
+.file-wrap .fileitem .check_icon{
+	background-image: url(../img/index/ico.png);
+	background-repeat: no-repeat;
+	background-position: 0 -370px;
+}
+.file-wrap .fileitem.checked .check_icon{
+	background-position: 0 -421px;
+}
+.file-wrap .fileitem.filelist .check_icon{
+	background-image: url(../img/index/ico.png);
+	background-repeat: no-repeat;
+	background-position: 0 -270px;
+}
+.file-wrap .fileitem.filelist.checked .check_icon{
+	background-position: 0 -320px;
+}
+.file-wrap .fileitem .icon{
+	background-image: url(../img/index/file.png);
+	background-repeat: no-repeat;
+}
+.file-wrap .typetxt .icon{
+	background-position: -112px -224px;
+}
+
+
+
+
+.weiyun{
+	position: relative;
+	height: 667px;
+	/*height: 100%;*/
+	min-height: 600px;
+    min-width: 960px;
+	overflow: hidden;
+    font-size: 12px;
+}
+.icon-bg{
+	background-image: url(../img/index/ico-message.png);
+}
+
+.roof{
+    min-width: 960px;
+	height: 50px;
+	border-bottom: 1px solid #d8dce5;
+}
+.logo{
+	margin: 12px 30px 0 19px;
+	width: 81px;
+	height: 26px;
+	background: url(../img/index/icon-header-logo.png) no-repeat;
+	text-indent: -9999px;
+}
+.vip-info{
+	line-height: 50px;
+	color: #5697f2;
+}
+.roof .fr{
+	padding-top: 10px;
+	line-height: 28px;
+}
+.vip-center{
+	margin-right: 13px;
+	width: 106px;
+	background-color: #3091f2;
+	border: 1px solid #147ade;
+	color: #fff;
+}
+.vip-center:hover{
+	background-color: #147ade;
+}
+.vip-center-icon{
+	margin: 6px 5px 0 15px;
+	width: 24px;
+	height: 15px;
+	background: url(../img/index/icon-vip-white.png) no-repeat;
+}
+.app{
+	margin-right: 13px;
+	width: 123px;
+	border: 1px solid #3091f2;
+	color: #3091f2;
+}
+.app-icon{
+	margin: 7px 6px 0 23px;
+	width: 12px;
+	height: 16px;
+	background: url(../img/index/icon-phone.png) no-repeat;
+}
+.app:hover{
+	border: 1px solid #317ece;
+	color: #317ece;
+}
+.app:hover .app-icon{
+	background: url(../img/index/icon-phone-hover.png) no-repeat;
+}
+.search{
+	margin-right: 22px;
+	width: 160px;
+	height: 28px;
+	border: 1px solid #c2c3ca;
+	background: url(../img/index/search.png) no-repeat;
+	text-indent: 30px;
+}
+.user{
+	margin-right: 41px;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #c2c3ca;
+	cursor: pointer;
+}
+.user-icon{
+	width: 100%;
+}
+.user .arrow{
+	left: 41px;
+	top: 15px;
+	width: 7px;
+	height: 4px;
+	background-position: 0 -1134px;
+}
+
+
+
+
+
+
+
+.main{
+	position: absolute ;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    min-width: 960px;
+	/*min-height: 550px;*/
+}
+
+
+.aside{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 159px;
+	border-right: 1px solid #d8dce5;
+	background-color: #eaedf4;
+}
+.upload-box{
+	box-sizing: border-box;
+	padding-top: 14px;
+	height: 62px;
+}
+.upload{
+	display: block;
+	position: relative;
+	margin-left: 15px;
+	width: 128px;
+	height: 34px;
+	border: 1px solid #288cef;
+	background-color: #3091f2;
+	line-height: 34px;
+	font-size: 14px;
+	color: #fff;
+	cursor: default;
+	text-align: center;
+}
+.upload span{
+	vertical-align: top;
+	font-size: 26px;
+	line-height: 34px;
+	font-weight: bold;
+}
+.upload .uploadbtn{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.item{
+	display: block;
+	position: relative;
+	height: 32px;
+	margin-bottom: 5px;
+	border-top: 1px solid #eaedf4;
+	border-bottom: 1px solid #eaedf4;
+	line-height: 32px;
+	text-indent: 50px;
+	color: #505254;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+.item:hover{
+	background-color: #e0e4ed;
+	border-top: 1px solid #d8dce5;
+	border-bottom: 1px solid #d8dce5;
+}
+.item.checked{
+	background-color: #ced4e0;
+	border-top: 1px solid #c8ccd5;
+	border-bottom: 1px solid #c8ccd5;
+}
+.item i{
+	position: absolute;
+	top: 9px;
+	left: 27px;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/index/ico-message.png);
+	background-position: 0 -8px;
+}
+.item.recent i{
+	background-position: 0 -39px;
+}
+.item.doc i{
+	background-position: 0 -104px;
+}
+.item.pic i{
+	background-position: 0 -72px;
+}
+.item.music i{
+	background-position: 0 -201px;
+}
+.item.video i{
+	background-position: 0 -168px;
+}
+.item.note i{
+	background-position: 0 -136px;
+}
+.item.clip i{
+	background-position: 0 -263px;
+}
+.item.share i{
+	background-position: 0 -296px;
+}
+.item.recycle i{
+	background-position: 0 -328px;
+}
+
+.nav-gap{
+	padding-top: 9px;
+	border-bottom: 1px solid #d8dce5;
+	margin-bottom: 10px;
+}
+
+.aside-ft{
+	position: absolute;
+	left: 24px;
+	bottom: 20px;
+	line-height: 18px;
+}
+.aside-ft a{
+	color: #868686;
+}
+
+
+
+
+
+
+.content{
+	position: relative;
+	margin-left: 160px;
+	height: 100%;
+}
+.btn-box{
+	height:  62px;
+	border-bottom: 1px solid #c8ccd5;
+	background-color: #f5f6f9;
+}
+.btns-all{
+	margin-left: 12px;
+	padding-top: 13px;
+	display: none;
+}
+.btns{
+	display: block;
+	position: relative;
+	margin-right: 5px;
+	height: 34px;
+	padding: 0 18px 0 40px;
+	line-height: 34px;
+	background-color: #fff;
+	border: 1px solid #c7c9cf;
+	color: #505254;
+}
+.btn-box i{
+	position: absolute;
+	left: 18px;
+	top: 8px;
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/index/ico-message.png);
+}
+.download-btn i{
+	background-position: 0 -359px;
+}
+.share-btn i{
+	background-position: 0 -393px;
+}
+.moveto-btn i{
+	background-position: 0 -457px;
+}
+.rename-btn i{
+	background-position: 0 -520px;
+}
+.delete-btn i{
+	background-position: 0 -328px;
+}
+.newfile-btn i{
+	background-position: 0 -552px;
+}
+.refresh-btn{
+	padding: 0;
+	width: 40px;
+}
+.refresh-btn i{
+	left: 13px;
+	background-position: 0 -712px;
+}
+.tree-btn,
+.howshow-btn{
+	padding: 0;
+	width: 48px;
+}
+.tree-btn i{
+	left: 18px;
+	background-position: 0 -1096px;
+}
+.howshow-btn i{
+	left: 13px;
+	background-position: 0 -1000px;
+}
+/*.howshow-btn i:nth-of-type(2){
+	left: 32px;
+	background-position: 0 -1128px;
+}*/
+
+
+.wrap{
+	position: absolute;
+	left: 12px;
+	top: 63px;
+	bottom: 0;
+	right: 0;
+}
+.tree-menu{
+	float: left;
+	width: 0;
+	box-sizing: border-box;
+    padding-top: 10px;
+	height: 100%;
+	transition: .5s;
+}
+.tree-menu-show{
+	float: left;
+	width: 170px;
+	border-right: 1px solid #e6e9f0;
+	height: 100%;
+	transition: .5s;
+}
+
+.listContent{
+	display: none;
+}
+
+.treeitem{
+	position: relative;
+	margin-left: 8px;
+	line-height: 26px;
+	border: 1px solid rgba(0,0,0,0);
+	overflow: hidden;
+	cursor: pointer;
+	text-indent: 38px;
+}
+.treeitem header{
+	/*width: 160px;*/
+	display: block;
+	overflow: hidden;
+	border: 1px solid rgba(255,255,255,0);
+}
+.tree-menu-show .header.checked{
+	border: 1px solid #d5e5f5;
+	background-color: #f3f8ff;
+}
+.treeitem i{
+	position: absolute;
+	left: 6px;
+	top: 0;
+	width: 27px;
+	height: 26px;
+	background: url(../img/index/noin-icon.png) no-repeat;
+}
+
+.treeitem .closed-icon{
+	background: url(../img/index/closed-icon.png) no-repeat;
+}
+.treeitem .opened-icon{
+	background: url(../img/index/opened-icon.png) no-repeat;
+}
+#move-msg .treeitem .checked{
+	border: 1px solid #d5e5f5;
+	background-color: #f3f8ff;
+}
+
+
+
+
+
+
+
+
+
+
+ .wrap-r{
+	/*margin-left: 172px;*//*这时当树状目录显示时，wrap-r的左侧margin-left*/
+	position: relative;
+	height: 100%;
+	transition: .5s;
+}
+.wrap-r-ml{
+	margin-left: 172px;/*这时当树状目录显示时，wrap-r的左侧margin-left*/
+}
+.breadcrumb-box{
+	height: 30px;
+	border-bottom: 1px solid #e6e9f0;
+	transition: .5s;
+}
+
+.checkall-box{
+	width: 34px;
+	height: 30px;
+	border-right: 1px solid #e6e9f0;
+}
+.checkall-btn{
+	float: left;
+	margin: 10px 0 0 10px;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+}
+.weiyun-btn{
+	float: left;
+	padding: 0 14px;
+	height: 31px;
+	line-height: 30px;
+	color: #414141;
+	background-image: url(../img/index/main-path.png);
+	background-position: -444px -50px; /*500-this.width */
+}
+.breadcrumb{
+	position: absolute;
+	top: 0;
+	left: 90px;
+	height: 30px;
+	line-height: 30px;
+}
+.breadcrumb a{
+	float: left;
+	padding: 0 24px 0 14px;
+	height: 31px;
+	max-width: 100px;
+	overflow: hidden;
+	line-height: 30px;
+	color: #414141;
+	background-image: url(../img/index/main-path.png);
+	background-position: 100% -50px; /*500-this.width*/
+}
+
+.wrap-r .g-empty {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -75px;
+	padding-top: 80px;
+	width: 200px;
+	height: 70px;
+	background: url('../img/index/g-empty.png') no-repeat;
+	text-align: center;
+	color: #bbbbbb;
+}
+/*图标显示*/
+.file-wrap{
+	position: absolute;
+	top: 32px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+/*缩略图横排布局*/
+.file-wrap .fileitemback{
+	float: left;
+	margin: 5px 5px 0 0;
+	width: 120px;
+	height: 120px;
+}
+.file-wrap .fileitem{
+    width: 118px;
+    max-height: 118px;
+    border: 1px solid #fff;
+    position: relative;
+    float: left;
+	transition: .3s;
+	cursor: pointer;
+}
+.file-wrap .fileitem:hover,
+.file-wrap .fileitem.checked{
+	border: 1px solid #c3d8f0;
+	background-color: #f3f9fe;
+}
+.file-wrap .fileitem.movehover{
+	border: 1px solid #c3d8f0;
+	background-color: rgb(204,228,251);
+}
+.file-wrap .fileitem .icon{
+    width: 64px;
+    height: 64px;
+    margin: 13px 0px 0px 27px;
+    background: ;
+}
+.file-wrap .fileitem .name{
+	width: 118px;
+	overflow: hidden;
+	line-height: 22px;
+    text-align: center;
+}
+.file-wrap .fileitem .check_icon{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: none;
+	cursor: auto;
+}
+.file-wrap .fileitem:hover .check_icon,
+.file-wrap .fileitem.checked .check_icon{
+	display: block;
+}
+.file-wrap .fileitem input{
+    width: 96px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 10px;
+    text-align: center;
+	border: 1px solid #3091f2;
+	background-color: #fff;
+}
+.file-wrap .fileitem input:focus {
+    border: 1px solid #3091f2;
+}
+
+
+
+	/*列表纵排布局*/
+.file-wrap .filelistback{
+	float: none;
+	height: 47px;
+}
+.file-wrap .fileitem.filelist{
+	float: none;
+	width: auto;
+    height: 46px;
+    padding-left: 10px;
+    line-height: 46px;
+	border: none;
+    border-bottom: 1px solid #eff1f5;
+	cursor: pointer;
+}
+.file-wrap .fileitem.filelist .check_icon,
+.file-wrap .fileitem.filelist .icon,
+.file-wrap .fileitem.filelist .name{
+    float: left;
+}
+.file-wrap .fileitem.filelist .check_icon{
+    margin: 18px 10px;
+	background-position: 0 -270px;
+}
+.file-wrap .fileitem.filelist .icon{
+    width: 32px;
+    height: 28px;
+    background: url(../img/index/list.png) no-repeat 0;
+    margin-top: 9px;
+    margin-right: 20px;
+}
+.file-wrap .fileitem.filelist .name{
+	width: auto;
+	max-width: 200px;
+	margin-top: 12px;
+	text-align: left;
+}
+.file-wrap .fileitem.filelist .createtime{
+	float: right;
+	margin-right: 40px;
+	text-align: right;
+}
+
+
+
+
+
+/*拖拽选择-扩选框*/
+.selectbox{
+	display: none;
+	position: absolute;
+	border: 1px dotted #0B6EE9;
+	background-color: rgba(195,216,240,.4);
+	z-index: 998;
+}
+
+/*提示框*/
+.msg-bg{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,.7);
+	z-index: 999;
+}
+.msg-box{
+	display: none;
+	width: 400px;
+	margin: 200px auto;
+	border: 1px solid #9198a6;
+	background-color: #fff;
+	color: cornflowerblue;
+}
+.msg-title{
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #d8dce5;
+	font-size: 18px;
+	color: #020202;
+	text-indent: 18px;
+}
+.msg-title .close-btn {
+	margin-right: 18px;
+	font-size: 30px;
+}
+#delete-msg .msg-info,
+#upload-msg .msg-info{
+	padding-top: 34px;
+	padding-bottom: 17px;
+	line-height: 32px;
+	font-size: 16px;
+	text-indent: 78px;
+}
+
+#move-msg .msg-info{
+	margin: 20px;
+	min-height: 100px;
+	max-height: 260px;
+	overflow: auto;
+	background-color: #f5fcff;
+}
+
+#delete-msg .msg-info .ico,
+#upload-msg .msg-info .ico{
+	position: absolute;
+	top: 34px;
+	left: 33px;
+	width: 32px;
+	height: 32px;
+	background: url(../img/index/ico.png) -1px -1px;
+}
+#delete-msg .msg-info em,
+#upload-msg .msg-info em{
+	display: block;
+	color: #909090;
+	font-size: 12px;
+}
+.msg-btns{
+	height: 60px;
+}
+.msg-btns input{
+	width: 62px;
+	height: 34px;
+	line-height: 34px;
+	margin-right: 24px;
+	float: right;
+}
+.ok-btn{
+	border: 1px solid #3091f2;
+	background-color: #3091f2;
+	color: #fff;
+}
+.cancle-btn{
+	border: 1px solid #c7c9cf;
+	color: #626466;
+}
+#progressBar{
+	display: none;
+	margin: 10px auto;
+	width: 300px;
+	height: 10px;
+	border: 1px solid #000;
+	position: relative;
+}
+#progressBg{
+	width: 0px;
+	height: 10px;
+	background: #3091f2;
+}
+#progressText{
+    position: absolute;
+    left: 0;
+    top: 10px;
+	width: 300px;
+    height: 20px;
+	text-align: left;
+	line-height: 20px;
+	font-size: 12px;
+    text-indent: 0;
+}
+
+
+/*顶部操作提示框*/
+.control-msg-box{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+.control-msg{
+	position: absolute;
+	top: -32px;
+	left: 50%;
+	padding: 0 20px;
+	height: 32px;
+	line-height: 32px;
+}
+.control-msg.success{
+	background-color: #75bc0f;
+}
+.control-msg.fail{
+	background-color: #f49918;
+}
+.control-ico{
+	width: 32px;
+	height: 32px;
+	background-image: url(../img/index/full-tip.png);
+}
+.control-msg.success .control-ico{
+	background-position: 0 -9px;
+}
+.control-msg.fail .control-ico{
+	background-position: 0 -109px;
+}
+
+
+/*拖拽尾巴图标*/
+/*文件夹按下拖拽效果*/
+.drag_wrap{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.drag_wrap .num{
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	background-color: #57acff;
+	border: 1px solid #3091f2;
+	color: #fff;
+	font: bold 12px/16px tahoma;
+	border-radius: 50%;
+	position: absolute;
+	top: -4px;
+	left: -5px;
+	z-index: 99;
+}
+.drag_wrap .dragico{
+	position: absolute;
+	width: 32px;
+	height: 34px;
+	background:url(../img/index/file-small.png) no-repeat;
+	left: 10px;
+	top: 10px;
+}
+
+/*右键菜单*/
+.contextmenu{
+    display: none;
+	position: absolute;
+	width: 0;
+	height: 0;
+    background-color: white;
+    border: 1px solid #c8ccd5;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+}
+.contextmenu.show{
+	width: 160px;
+    height: 96px;
+}
+.contextmenu .contextmenuitem{
+    padding: 5px 0;
+    border-top: 1px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0);
+    widht: 160px;
+    height: 20px;
+    line-height: 20px;
+    color: #020202;
+    text-indent: 30px;
+}
+.contextmenu .contextmenuitem:hover{
+    border-top: 1px solid #c3d8f0;
+    border-bottom: 1px solid #c3d8f0;
+    background-color: #f3f9fe;
+}
+
+
+
+
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}

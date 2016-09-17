@@ -1,0 +1,49 @@
+完成微云
+功能：
+	创建文件夹/文件
+	重命名
+	删除 ok
+	单选/多选/全选等效果 ok
+	移动到
+	面包屑导航 ok
+	
+	拖拽选择 ok
+	拖拽移动 ok
+	显示模式切换
+	右键菜单
+
+问题： 
+	Firefox浏览器不支持background-position-X和Y的属性
+
+完成进度：
+0.页面布局
+	注意点：
+		1）注意class的使用。在需要hover和active的元素上，尽量只取一个class名，fl、pa、bg等class名不使用，放在css里另写
+		2）开发web应用时，由于不希望出现滚动条，所以主要区域，均使用js动态设置宽高，使其自适应
+
+1.根据传入的数据，生成文件夹
+	涉及函数	新页面的生成	render(pidn)
+	 		根据传入的数据生成文件	creatFolder( data )
+	
+2.单选/多选/全选（包括鼠标移入移出等效果）
+	涉及函数	设置某个文件夹的选中状态	setStatus( fileElement, status, classname )
+			获取选中的文件	getChecked()
+			判断是否全选	isCheckAll()
+				
+	
+3.拖拽选择	
+	涉及函数	扩选框的碰撞检测	selectCheck( e, selectBox, boxs )
+
+4.点击进入文件夹
+	涉及函数	新页面的生成	render(pidn)
+	
+5.面包屑导航
+	涉及函数	新页面的生成	showBreadcrumb(pidn)
+	
+6.创建文件夹
+
+7.重命名
+
+8.删除
+
+9.拖拽移动

@@ -1,0 +1,27 @@
+功能：
+    用户模块
+        注册
+        登录
+        退出
+    搜索
+    网盘
+        上传文件
+        新建文件夹
+        重命名
+        移动到
+        删除
+        分享
+        【下载】
+        列表内容展示
+            按文件夹显示
+            按树结构显示
+        按类型分类查看
+        回收站
+
+
+
+nodejs + express + mongodb + mongoose + swig + supervisor
+
+supervisor : 自动重启工具
+npm install -g supervisor
+
