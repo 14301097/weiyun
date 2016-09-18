@@ -1,4 +1,4 @@
-# 基于nodejs + mongoose + jquery搭建的仿微云网盘demo
+# 基于nodejs + mongoose + jquery搭建的微云网盘demo
 ##简介:
 
 ###1.项目后端搭建:
