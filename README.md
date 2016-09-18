@@ -46,7 +46,7 @@
 ###4.效果演示
 
 这是一个用js操作模拟数据的静态网页，包含了此项目大部分的操作功能，可以大致预览此项目的实际效果：</br>
-<a href="">点我查看</a></br>
+<a href="https://sikychen.github.io/weiyun_demo/login.html">点我查看</a></br>
 
   
 ##运行需要安装:
