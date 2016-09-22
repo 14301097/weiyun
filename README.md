@@ -47,49 +47,7 @@
 
 这是一个用js操作模拟数据的静态网页，包含了此项目大部分的操作功能，可以大致预览此项目的实际效果：</br>
 <a href="https://sikychen.github.io/weiyun_demo/login.html">点我查看</a></br>
-
-  
-##运行需要安装:
-
-安装node(https://nodejs.org/en/);</br>
-
-##运行与使用:
-
-开启node app.js后台，默认是使用8888端口</br>
-启动数据库mongod</br>
-
-
-##项目结构:
-```
-├── models
-│   ├── File.js
-│   └── User.js
-├── schemas
-│   ├── file.js                                    文件数据结构
-│   └── user.js                                  用户信息数据结构
-├── Tools
-│   └── tree.js                                   树形结构的方法
-├── modules                                         路由目录
-│   ├── api                                         api路由
-│   └── main                                      普通用户路由
-├── node_modules                                node模块目录
-├── public                                        静态文件目录
-│   ├── css                                         样式目录
-│   │   ├── disk.css                        
-│   │   ├── index.css                    
-│   │   ├── base.css                   
-│   │   └── reset.css              
-│   ├── img                                    图片目录(文件夹)
-│   │   ├── index                                          
-│   │   └── login                                          
-│   └── js                                        JS脚本目录
-│   │   ├── disk.js
-│   │   ├── index.js
-│   │   ├── jquery.min.js
-│   │   └── mTween2.js
-├── app.js                                        项目入口文件
-└── package.json                            项目所需模块以及配置信息
-```
+</br></br>
 ##后期完善:
 
 回收站的进入以及回收站内文件的还原;</br>
