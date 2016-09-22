@@ -52,8 +52,6 @@
 ##运行需要安装:
 
 安装node(https://nodejs.org/en/);</br>
-安装express框架(npm install express -g);</br>
-安装mongodb(https://www.mongodb.org/downloads#production)查看说明完成相关环境以及配置搭建;</br>
 
 ##运行与使用:
 
